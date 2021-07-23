@@ -1459,6 +1459,12 @@ public class DashManifestParser extends DefaultHandler
     return result;
   }
 
+  @Deprecated
+  @C.RoleFlags
+  protected int parseDashRoleSchemeValue(@Nullable String value) {
+    return parseRoleFlagsFromDashRoleScheme(value);
+  }
+
   @C.RoleFlags
   protected int parseRoleFlagsFromDashRoleScheme(@Nullable String value) {
     if (value == null) {

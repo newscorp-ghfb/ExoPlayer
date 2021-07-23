@@ -27,6 +27,12 @@ import com.google.android.exoplayer2.source.TrackGroup;
  */
 public interface TrackSelection {
 
+  interface Factory { }
+
+  default int getSelectedIndex() {
+    return -1;
+  };
+
   /** An unspecified track selection type. */
   int TYPE_UNSET = 0;
   /** The first value that can be used for application specific track selection types. */

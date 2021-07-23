@@ -1625,6 +1625,10 @@ public class DefaultTrackSelector extends MappingTrackSelector {
     this(Parameters.DEFAULT_WITHOUT_CONTEXT, new AdaptiveTrackSelection.Factory());
   }
 
+  public DefaultTrackSelector(TrackSelection.Factory trackSelectionFactory) {
+    this((ExoTrackSelection.Factory) trackSelectionFactory);
+  }
+
   /** @deprecated Use {@link #DefaultTrackSelector(Context, ExoTrackSelection.Factory)}. */
   @Deprecated
   public DefaultTrackSelector(ExoTrackSelection.Factory trackSelectionFactory) {
