@@ -1801,6 +1801,17 @@ public final class Util {
    */
   @ContentType
   public static int inferContentType(Uri uri) {
+    // New type C.TYPE_RTSP has been added to constants with a value of 3
+    // which formerly belonged to C.TYPE_OTHER
+    // As of 6.16.5 Brightcove still expects old constant value
+    final int result = _inferContentType(uri);
+    // Force return old value since constants are inlined in Brightcove SDK
+    if (result == C.TYPE_RTSP || result == C.TYPE_OTHER) return 3;
+    return result;
+  }
+
+  // Original implementation
+  private static int _inferContentType(Uri uri) {
     @Nullable String scheme = uri.getScheme();
     if (scheme != null && Ascii.equalsIgnoreCase("rtsp", scheme)) {
       return C.TYPE_RTSP;

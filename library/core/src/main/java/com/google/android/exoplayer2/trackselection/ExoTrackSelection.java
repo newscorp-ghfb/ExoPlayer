@@ -68,7 +68,7 @@ public interface ExoTrackSelection extends TrackSelection {
   }
 
   /** Factory for {@link ExoTrackSelection} instances. */
-  interface Factory {
+  interface Factory extends TrackSelection.Factory {
 
     /**
      * Creates track selections for the provided {@link Definition Definitions}.
