@@ -626,12 +626,13 @@ public final class C {
    */
   public static final int TYPE_HLS = 2;
   /** Value returned by {@link Util#inferContentType(String)} for RTSP. */
-  public static final int TYPE_RTSP = 3;
+  // Since int constance are inlined we need to only add new ones instead of changing existing values
+  public static final int TYPE_RTSP = 4;
   /**
    * Value returned by {@link Util#inferContentType(String)} for files other than DASH, HLS or
    * Smooth Streaming manifests, or RTSP URIs.
    */
-  public static final int TYPE_OTHER = 4;
+  public static final int TYPE_OTHER = 3;
 
   /**
    * A return value for methods where the end of an input was encountered.
